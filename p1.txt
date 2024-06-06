@@ -1,0 +1,30 @@
+p1-random.js
+/*
+    CIT 281 Project 1
+    Name: Kieran Bash
+*/
+
+// Returns a random number between min (inclusive) and max (exclusive)
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomLetter() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const random = getRandomInteger(0, alphabet.length);
+    return alphabet[random];
+}
+
+function getRandomLength() {
+    const randomLength = getRandomInteger(5, 26);
+    let randomString = '';
+    for (let i = 0; i < randomLength; i++) {
+        randomString = randomString + getRandomLetter();
+    }
+    return randomString;
+}
+console.log(getRandomLength());
+
+p1-date.js
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+console.log(daysOfWeek[new Date().getDay()]);
